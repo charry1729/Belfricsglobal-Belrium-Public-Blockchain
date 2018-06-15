@@ -19,20 +19,27 @@ And the development of Dapp involves all of these types of network simultaneousl
 Node v8.x.x
 
 ## 2 Setup bel-cli
+```
 npm install -g bel-cli
+```
 
 ## 2 Setup bel # clone bel
-
+```
 git clone https://github.com/belplatform/bel.git bel && cd bel && npm install && cd ..
+```
 
 ## 4 Start localnet
 Run your own local bel node.
 
 # change directory
+```
 cd bel
+```
 
 # start the localnet (default on localhost:4096)
+```
 node app.js
+```
 
 ## 4 Start The Frontend Application (optional)
 To access the localnet via a graphical user interface (GUI) start the frontend application. 
@@ -41,13 +48,19 @@ Be sure to have the localnet up and running.
 This step must be run from another console. The first console is already busy with running the localnet.
 
 # change directory
+```
 cd bel/public
+```
 Install the dependencies for the frontend application
 
+```
 yarn install
+```
 Build the frontend application for the localnet.
 
+```
 gulp build-local
+```
 Now you can access the frontend application on the address ```localhost:4096```.
 
 *NOTE:* You don't need to start a http-server. bel is already providing one for you.
@@ -56,22 +69,24 @@ Now you can access the frontend application on the address ```localhost:4096```.
 First create a new local bel-account.
 
 # execute (in root folder)
-
+```
 > bel-cli -H 127.0.0.1 -P 4096 crypto --generate
-
+```
 # ? Enter number of accounts to generate:   1
 **Our New Account**
 
+```
 address: AHMCKebuL2nRYDgszf9J2KjVZzAw95WUyB
 secret: sentence weasel match weather apple onion release keen lens deal fruit matrix
 publicKey: a7cfd49d25ce247568d39b17fca221d9b2ff8402a9f6eb6346d2291a5c81374c
+```
 
 **Genesis Account**
-
+```
 address: 14762548536863074694
 secret: someone manual strong movie roof episode eight spatial brown soldier soup motor
 publicKey: 8065a105c785a08757727fded3a06f8f312e73ad40f1f3502e0232ea42e67efd
-
+```
 **Our new Acccount** will be our account for this tutorial.
 
 We need **100 BEL** to register a dapp. 
@@ -79,16 +94,20 @@ Our new account has **0 BEL**. The **genesis** account has 100000000 BEL on it.
 Lets send some money to **our** account.
 
 # send money to our account
+```
 > bel-cli -H 127.0.0.1 -P 4096 sendmoney --secret "someone manual strong movie roof episode eight spatial brown soldier soup motor" --to
 "AHMCKebuL2nRYDgszf9J2KjVZzAw95WUyB" --amount 100000000000
+```
 
 # check your balance
+```
 > bel-cli -H 127.0.0.1 -P 4096 openaccount "sentence weasel match weather apple onion release keen lens deal fruit matrix"
-
+```
 ## 6 Create A Dapp Metadata File
 First we have to create 5 delegate accounts:
 
 # execute in root (you don't have to point to the localhost, this command is execute only in bel-cli)
+```
 > bel-cli crypto --generate
 ? Enter number of accounts to generate     5
 
@@ -118,10 +137,11 @@ First we have to create 5 delegate accounts:
 		publicKey: '452df9213aedb3b9fed6db3e2ea9f49d3db226e2dac01828bc3dcd73b7a953b4'
 	}
 ]
-
+```
 After that enter your bel source code folder and make sure the localnet is running.
 
 # this must be executed in a new console
+```
 > mkdir bel-test-dapp && cd bel-test-dapp
 > bel-cli dapps -a
 
@@ -173,15 +193,15 @@ This step created the `bel-test-dapp/dapp.json` file.
 	"unlockDelegates": 3,
 	"type": 0
 }
-
+```
 ## 6 Register The Dapp On The Localnet
 
 Until now we only have generated file (`bel-test-dapp/dapp.json`). Now we want to register this dapp metadata file on the localnet. We register the dapp with **our** newly generated address.
 
 # execute (in bel/dapps)
-
-> bel-cli -H 127.0.0.1 -P 4096 registerdapp --metafile dapp.json --secret "sentence weasel match weather apple onion release keen lens deal fruit matrix"
-
+```
+bel-cli -H 127.0.0.1 -P 4096 registerdapp --metafile dapp.json --secret "sentence weasel match weather apple onion release keen lens deal fruit matrix"
+```
 **Result**
 
 # This returns the new Dapp-ID
@@ -189,7 +209,7 @@ Now navigate in your browser to `localhost:4096`. Login with **our** new created
 
 Use browser access `http://localhost:4096/api/dapps/get?id= `, 
 you can query the dapp, the following is the return information:
-
+```
 {
 	"success": true,
 	"dapp": {
@@ -211,26 +231,28 @@ you can query the dapp, the following is the return information:
 		"transactionId": "0599a6100280df0d296653e89177b9011304d971fb98aba3edcc5b937c4183fb"
 	}
 }
-
+```
 ## 7 Install the dapp on the localnet
 Finally it is time to install the dapp on the localnet.
 
 First we copy the files created in previous step to the dapp subdirectory 
 under the bel installation directory and rename it to dapp's id:
+```
 > cp -r bel-test-dapp path/to/bel/dapps/0599a6100280df0d296653e89177b9011304d971fb98aba3edcc5b937c4183fb
+```
 
 then:
 # execute
 
+```
 bel-cli -H 127.0.0.1 -P 4096 dapps --install
-
 # ? Enter dapp id
 # (input your dapp Id)
 # ? Host and port (localhost:4096)
 # [Enter]
 # ? What is your dapp master password
 #
-
+```
 The dapp masterpassword is located in `bel/config.json`.
 
 "dapp": {

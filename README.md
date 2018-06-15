@@ -11,12 +11,11 @@
 5. Run the following commands to install the required software dependencies.
    System Dependency
    nodejs v6.3+,npm 3.10+ (not cnpm),node-gyp v3.6.2+ (suggested),sqlite v3.8.2+,g++,libssl,
-
-   Installation dependencies for ubuntu 14.04.x or higher using bash script.
+# Installation dependencies for ubuntu 14.04.x or higher using bash script.
 
    sudo ./belrium_manager.bash install
 
-   Installation dependencies for ubuntu 14.04.x or higher manually.
+# Installation dependencies for ubuntu 14.04.x or higher manually.
 
 # Install dependency package
    sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential -y
@@ -37,7 +36,7 @@
 
    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
 
-# This loads nvm bash_completion
+   This loads nvm bash_completion
 
 # Install node and npm for current user
    nvm install v8

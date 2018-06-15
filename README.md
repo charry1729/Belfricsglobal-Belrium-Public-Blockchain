@@ -3,22 +3,22 @@ Belrium Public Blockchain
 
 Steps to setup new belrium mining node:
 
-1 Register and create wallet on app.belrium.io
+1. Register and create wallet on app.belrium.io
 
-2 Verify your email and activate your wallet.This information is purely confidential. Please do not disclose this with anyone.
+2. Verify your email and activate your wallet.This information is purely confidential. Please do not disclose this with anyone.
 
-3 You can now upload documents based on your geography and get your wallet compliance checked.Once your wallet is compliant you can start transacting on the belrium network.
+3. You can now upload documents based on your geography and get your wallet compliance checked.Once your wallet is compliant you can start transacting on the belrium network.
 
-4 Get the source code hosted at - https://bitbucket.org/belfricscore/belriumnode
+4. Get the source code hosted at - https://bitbucket.org/belfricscore/belriumnode
 
-5 Run the following commands to install the required software dependencies.
+5. Run the following commands to install the required software dependencies.
 
 System Dependency
 nodejs v6.3+,npm 3.10+ (not cnpm),node-gyp v3.6.2+ (suggested),sqlite v3.8.2+,g++
 libssl,
 
 Installation dependencies for ubuntu 14.04.x or higher using bash script.
-$ sudo ./belrium_manager.bash install
+sudo ./belrium_manager.bash install
 
 Installation dependencies for ubuntu 14.04.x or higher manually.
 #Install dependency package
@@ -45,7 +45,7 @@ nvm install v8
 # Install node packages
 npm install
 
-To connect with the Belrium blockchain, new node need to change the setting file (Belrium->config.json) with following information.
+6. To connect with the Belrium blockchain, new node need to change the setting file (Belrium->config.json) with following information.
 {
 	"port": 4096,
 	"address": "0.0.0.0",
@@ -96,11 +96,11 @@ To connect with the Belrium blockchain, new node need to change the setting file
 }
 
 
-Run the following script to start the node
+7. Run the following script to start the node
 ./belrium_manager.bash start
 
-Run the following command to stop the node
+8. Run the following command to stop the node
 ./belrium_manager.bash stop
 
-Run the following script to know the status
+9. Run the following script to know the status
 ./belrium_manager.bash status

@@ -1,7 +1,4 @@
-# Belfricsglobal-Belrium-Public-Blockchain
-Belrium Public Blockchain 
-
-Steps to setup new belrium mining node:
+# Steps to setup new belrium mining node:
 
 1. Register and create wallet on app.belrium.io
 
@@ -12,38 +9,41 @@ Steps to setup new belrium mining node:
 4. Get the source code hosted at - https://bitbucket.org/belfricscore/belriumnode
 
 5. Run the following commands to install the required software dependencies.
+   System Dependency
+   nodejs v6.3+,npm 3.10+ (not cnpm),node-gyp v3.6.2+ (suggested),sqlite v3.8.2+,g++,libssl,
 
-System Dependency
-nodejs v6.3+,npm 3.10+ (not cnpm),node-gyp v3.6.2+ (suggested),sqlite v3.8.2+,g++
-libssl,
+   Installation dependencies for ubuntu 14.04.x or higher using bash script.
 
-Installation dependencies for ubuntu 14.04.x or higher using bash script.
-sudo ./belrium_manager.bash install
+   sudo ./belrium_manager.bash install
 
-Installation dependencies for ubuntu 14.04.x or higher manually.
-#Install dependency package
-sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential -y
+   Installation dependencies for ubuntu 14.04.x or higher manually.
+
+# Install dependency package
+   sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential -y
 
 # libsodium for ubuntu 14.04
-sudo apt-get install libtool -y
+   sudo apt-get install libtool -y
 
 # libsodium for ubuntu 16.04
-sudo apt-get install libtool libtool-bin -y
+   sudo apt-get install libtool libtool-bin -y
 
 # Install nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
 # This loads nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+   export NVM_DIR="$HOME/.nvm"
+
+   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+
+   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+
 # This loads nvm bash_completion
 
 # Install node and npm for current user
-nvm install v8
+   nvm install v8
 
 # Install node packages
-npm install
+   npm install
 
 6. To connect with the Belrium blockchain, new node need to change the setting file (Belrium->config.json) with following information.
 {

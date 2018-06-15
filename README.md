@@ -97,10 +97,15 @@ npm install
 
 
 7. Run the following script to start the node
+
 ./belrium_manager.bash start
 
+
 8. Run the following command to stop the node
+
 ./belrium_manager.bash stop
 
+
 9. Run the following script to know the status
+
 ./belrium_manager.bash status

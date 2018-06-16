@@ -465,13 +465,14 @@ No
 <p>then:</p>
 <h1><a id="execute_567"></a>execute</h1>
 <pre><code>bel-cli -H 127.0.0.1 -P 4096 dapps --install
+
+# ? Enter dapp id
+# (input your dapp Id)
+# ? Host and port (localhost:4096)
+# [Enter]
+# ? What is your dapp master password
+#
 </code></pre>
-<h1><a id="_Enter_dapp_id_571"></a>? Enter dapp id</h1>
-<h1><a id="input_your_dapp_Id_572"></a>(input your dapp Id)</h1>
-<h1><a id="_Host_and_port_localhost4096_573"></a>? Host and port (localhost:4096)</h1>
-<h1><a id="Enter_574"></a>[Enter]</h1>
-<h1><a id="_What_is_your_dapp_master_password_575"></a>? What is your dapp master password</h1>
-<h1><a id="_576"></a></h1>
 <p>The dapp masterpassword is located in <code>bel/config.json</code>.</p>
 <pre><code>&quot;dapp&quot;: {
     &quot;masterpassword&quot;: &quot;ytfACAMegjrK&quot;,
@@ -480,7 +481,7 @@ No
     }
 </code></pre>
 <p>Then write the passwords of the 5 delegates into the dapp configuration file <code>bel/dapps/ /config.json</code>.</p>
-<h1><a id="configjson_586"></a>config.json</h1>
+<h1><a id="configjson_587"></a>config.json</h1>
 <pre><code>{
     &quot;secrets&quot;: [
         &quot;flame bottom dragon rely endorse garage supply urge turtle team demand put&quot;,
@@ -492,13 +493,13 @@ No
 }
 </code></pre>
 <p><strong>After the installation restart the node</strong></p>
-<h1><a id="stop_the_localnet_with_Ctrl__C_600"></a>stop the localnet with Ctrl + C</h1>
-<h1><a id="restart_the_localnet_601"></a>restart the localnet</h1>
+<h1><a id="stop_the_localnet_with_Ctrl__C_601"></a>stop the localnet with Ctrl + C</h1>
+<h1><a id="restart_the_localnet_602"></a>restart the localnet</h1>
 <pre><code>&gt; node app.js
 </code></pre>
-<h2><a id="8_Access_The_Dapp_In_Your_Browser_605"></a>8 Access The Dapp In Your Browser</h2>
+<h2><a id="8_Access_The_Dapp_In_Your_Browser_606"></a>8 Access The Dapp In Your Browser</h2>
 <p>Now you can access the dapp like a website <code>localhost:4096/dapps/ /</code> in your browser.</p>
-<h2><a id="9_Set_Dapp_Genesis_Password_607"></a>9 Set Dapp Genesis Password</h2>
+<h2><a id="9_Set_Dapp_Genesis_Password_608"></a>9 Set Dapp Genesis Password</h2>
 <p>Under <code>bel/config.json</code> set the genesis password for your dapp. Input your <code></code> and the secret of your<br>
 <strong>before</strong></p>
 <pre><code>&quot;dapp&quot;: {
@@ -517,7 +518,7 @@ No
 }
 </code></pre>
 <p>In the future when the DApp is published in testnet or mainnet, it still needs a machine that configures the primary password. NOTE: Only one machine is required.</p>
-<h2><a id="10_The_folder_structure_629"></a>10 The folder structure</h2>
+<h2><a id="10_The_folder_structure_630"></a>10 The folder structure</h2>
 <p>Now we can see that there is a new folder added under <code>bel/dapps</code>, named as the DApp ID just created.</p>
 <pre><code>&gt; ls -la dapps/
 dapps
@@ -550,7 +551,7 @@ dapps
     └─── withdrawaltransfer.js # BEL withdraw 
 </code></pre>
 <p>Developers need to create a new contact to run business logic. That’s all.</p>
-<h2><a id="11_Dapp_Deposit_666"></a>11 Dapp Deposit</h2>
+<h2><a id="11_Dapp_Deposit_667"></a>11 Dapp Deposit</h2>
 <p>In this project, we are able to conduct multiple tasks such as deposit, in-chain transfer, and withdraw. Currently deposit can only be executed via command line (this feature will be built into the main wallet in the future).</p>
 <pre><code>&gt; bel-cli dapps --deposit
 ? Enter secret *******************************************************************************
